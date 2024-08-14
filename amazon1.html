@@ -3,715 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Amazon clone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
-    <style>
-
-       *{
-            margin: 0;
-            padding: 0;
-            font-family: arial; 
-            box-sizing: border-box;
-        }
-        .nav_bar{
-           width: 100%;
-            height: 60px;
-            background-color: #0f1111;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-        }
-        .nav_address{
-          width: 6rem;
-          display: flex;
-          flex-direction: column;
-        }
-        .nav_logo{
-            height: 50px;
-            width: 100px;
-        }
-        .logo{
-            margin: 5px;
-            background-image: url(amzon\ logo\ \(1\).jpg);
-            background-size: contain;
-            background-repeat: no-repeat;
-            height: 50px;
-            width: 100%;
-        }
-        .border{
-            border: 1px solid transparent;
-        }
-        .border:hover{
-            border: 1px solid white;
-        }
-         /** box2 **/
-
-         .add_first{
-            color: #cccccc;
-            font-size: 0.85rem;
-            margin-left: 15px;
-        }
-        .add_second{
-            font-size: 1rem;
-            margin-left: 3px;
-        }
-        .add_icon{
-            display: flex;
-            align-items: center;
-        }
-
-        /* box3 */
-
-        .nav_search{
-            display: flex;
-            background-color: pink;
-            width: 60%;
-            height: 40px;
-            border-radius: 4px;
-        }
-        .search_select{
-            background-color: #f3f3f3;
-            width: 50px;
-            text-align: center;
-            border-top-left-radius: 4px;
-            border-bottom-left-radius: 4px;
-            border: none;
-        }
-        .search_input{
-            width: 100%;
-            font-size: 1rem;
-            border: none;
-        }
-        .search_icon{
-            width: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            background-color: #febd68;
-            border-top-right-radius: 4px;
-            border-bottom-right-radius: 4px;
-            color: #0f1111;
-        }
-
-        .nav_search:hover{
-            border: 2px solid orange;
-        }
-
-        /* box4 */
-
-        span{
-            font-size: 0.7rem;
-        }
-        .nav_second{
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-        .nav_return{
-          width: 5rem;
-        }
-        .nav_signin{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: row;
-          width: 9rem;
-        }
-        .nav_sign_data{
-          display: flex;
-          flex-direction: column;
-        }
-
-        /* box5 */
-
-        .nav_cart i{
-            font-size: 25px;
-        }
-        .nav_cart{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-            font-size: 0.85rem;
-        }
-        .nav_location{
-          display: flex;
-          
-        }
-        .nav_location img{
-          height: 20px;
-          width: 25px;
-          background-color: #0f1111;
-        }
-        .location_select{
-          background-color: #0f1111;
-          color: white;
-          border: none;
-        }
-        .slider{
-            height: fit-content;
-            width: 25%;
-            display: none;
-            align-items: flex-start;
-            flex-direction: column;
-            gap: 20px;
-            color: black;
-            position: absolute;
-            background-color: white;
-            border: 2px solid;
-             animation: rightmovement 1s linear 0s forwards;
-             z-index: 1;
-             opacity: 0;
-        }
-        a:hover .slider{
-            display: flex;
-            opacity: 1;  
-        }
-        .panel_all a{
-            color: white;
-            font-size: 0.82rem;
-            text-decoration: none;
-        }
-        @keyframes rightmovement {
-            from{
-                top: 100px;
-                left: -50px;
-            }
-            to{
-                top: 100px;
-                left: 5px;
-            }
-        } 
-        .slide_bar{
-            height: 10%;
-            width: 100%;
-            background-color: gray;
-            color: black;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            position: relative;
-            flex-direction: row;
-        }
-        .slide_bar img{
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-        }
-        .slide_bar_data1,.slide_bar_data2{
-            margin-left: 15px;
-            width: 100%;
-            height: 25%;
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-evenly;
-            flex-direction: column;
-            font-size: 15px;
-            position: relative;
-        }
-        .A,.B,.C{
-            width: 95%;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-direction: row;
-            /* border: 1px solid; */
-        }
-        .A:hover,.B:hover,.C:hover{
-            height: 40px;
-            width: 95%;
-            background-color: gainsboro;
-        }
-        .line1,.line2{
-            height: 1px;
-            width: 100%;
-            border: .5px solid rgb(90, 87, 87);
-        }
-        .slide_bar_data3{
-            margin-left: 15px;
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-evenly;
-            flex-direction: column;
-            position: relative;
-            font-size: 15px;
-            gap: 20px;
-
-        }
-        .AB{
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            gap: 15px;
-        }
-         /* panel */
-
-         .panel{
-            /* width: 100%; */
-            height: 40px;
-            background-color: #222f3d;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            color: white;
-        }
-        .panel_ops p{
-            display: inline;
-            margin-left: 10px;
-        }
-        .panel_ops p:hover{
-            border: 1px solid white;
-        }
-        .panel_ops{
-            width: 80%;
-            font-size: 0.85rem;
-        }
-        .panel_deals{
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-         /* hero section */
-
-         .hero_section{
-            background-image: url(bacgd\ img.jpg);
-            background-size: cover;
-            height: 600px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            
-        }
-        .hero_msg{
-            background-color: white;
-            color: #0f1111;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            width: 96%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .hero_msg:hover{
-            border: 3px solid orange;
-        }
-        .hero_msg a{
-            color: #007185;
-            text-decoration: none;
-        }
-        .hero_msg a:hover{
-            color: orange;
-            text-decoration: underline;
-        }
-        .index_icon{
-           
-            color: white;
-            height: 150px;
-            width: 99%;
-            position: relative;
-            top: 40px;
-            left: 0;
-            right: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .icon1,.icon2{
-            font-size: 30px;
-            font-weight: 700;
-            height: 80px;
-             width: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-           
-        }
-        .icon1:hover,.icon2:hover{
-             border: 2px solid orange;
-             height: 80px;
-             width: 50px;
-             color: white;
-        }
-
-         /* shop section */
-
-/*section-1*/
-
-         .shop_section1{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap:30px;
-            margin-top: 16%;
-            position: relative;
-        }
-        .shop_section1 h2:hover{
-            text-decoration: underline;
-            color: blue;
-        }
-        .shop_img2{
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-        }
-        .box{
-            border: 1px solid rgba(0, 0, 0, 0.68) ;
-            height: 350px;
-            width: 25%;
-            background-color: white;
-        }
-        .box1,.box4,.box3{
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-        }
-        .box1_img,.box4_img,.box3_img{
-            height: 250px;
-            width: 100%;
-        }
-        .shop_section1 p:hover{
-            color: orange;
-            text-decoration: underline;
-        }
-        .box2{
-            width:25%;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-            background-color: aliceblue;
-        }
-        .shop_img{
-            display: grid;
-            align-items: center;
-            justify-content: space-between;
-            grid-template-columns: repeat(2,4fr);
-        }
-        .shop_section, img:hover{
-            transform: scale(1.1);
-            transition: 1s;
-        }
-        .box2 img{
-            height: 110px;
-            width: 150px;
-        }
-        p:hover{
-            border: 1.5px solid white;
-        }
-        h2:hover,h4:hover{
-            text-decoration: underline;
-            color: #fc9105;
-        }
-
- /*section-2*/    
- 
-        .shop_section2{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap:30px;
-            margin-top: 3%;
-            position: relative;
-        }
-        .boxA,.boxB,.boxD{
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-        }
-        .boxC{
-            /* width:25%; */
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-            background-color: aliceblue;
-        }
-        .boxA_img,.boxD_img,.boxB_img{
-            height: 250px;
-            width: 100%;
-        }
-        .shop_imgC{
-            display: grid;
-            align-items: center;
-            justify-content: space-between;
-            grid-template-columns: repeat(2,1fr);
-        }
-        .shop_section2 h2:hover{
-            text-decoration: underline;
-            color: blue;
-        }
-        .shop_section2 p:hover{
-            text-decoration: underline;
-            color: orange;
-        }
-
-        
-
-/*section-3*/  
-
-        .shop_section3{
-          height: 200px;
-          width: 90%;
-          display: flex;
-          align-items: center;
-          justify-content: space-evenly;
-          background-color: white;
-          flex-direction: column;
-          border: 1px solid;
-          margin-top: 50px;
-          margin-left: 75px;
-        }
-      .section_txt{
-        width: 100%;
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        flex-direction: row;
-      }
-      .section3_img{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-evenly;
-          /* height: 100px; */
-          width: 100%;
-        }
-        .shop_section3, img:hover{
-            transform: scale(1.1);
-            transition: 1s;
-        }
-        .shop_section3 i:hover{
-            color: orange;
-            border: 1.5px solid black;
-        }
-      .section_txt span{
-        font-size: 1.1rem;
-      }
-      .section_txt h2:hover {
-        color: blue;
-        text-decoration: underline;
-      }
-      .section_txt span:hover{
-        color: orange;
-        text-decoration: underline;
-      }
-
-/*footer section*/
-
-
-           .footer1{
-            width: 100%;
-            height: 150px;
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: .82rem;
-            gap: 10px;
-            border-radius: 4px;
-        }
-        button{
-            height: 30px;
-            width: 250px;
-            background-color: orange;
-            border-radius: 4px;
-            border: none;
-            box-shadow: 0px 0px 4px 0px black;
-            color: black;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-        button:hover{
-            transform: scale(1.02);
-            transition: .5s;
-        }
-        .footer1 a{
-            color: green;
-            text-decoration: none;
-            font-size: .75rem;
-        }
-      .footer1 a:hover{
-            text-decoration: underline;
-            color: orange;
-        }
-        /*footer-2*/
-
-        .footer2{
-            background-color: #3e4545d6;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 40px;
-            gap: 20px;
-            border-top-right-radius: 4px;
-            border-top-left-radius: 4px;
-            margin-top: 10px;
-        }
-        .footer2 i{
-            font-size: 20px;
-            color: orange;
-           display: none;
-        }
-        .footer2:hover i{
-           display: flex;
-           color: orange;
-        }
-        .footer2 p:hover {
-            text-decoration: underline;
-            color: #fc9105;
-            border: none;
-            
-        }
-        /*footer-3*/
-
-        .footer3{
-            width: 100%;
-            height: 500px;
-            display:flex;
-            /* align-items: center; */
-            justify-content: center;
-            flex-direction: column;
-            background-color: rgba(0, 0, 0, 0.811);
-            color: white;
-            gap: 70px;
-            font-size: 0.8rem;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .data{
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: row;
-        }
-        .data1,.data2,.data3,.data4{
-            height: 100%;
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
-            margin-top: 20px;
-            text-transform: capitalize;
-        }
-        .line{
-            width: 100%;
-            height: 1px;
-            background-color: rgba(180, 176, 176, 0.888);
-        }
-        .details{
-            width: 100%;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 50px;
-        }
-        .details .details_img{
-            height: 30px;
-            width: 100px;
-        }
-        .details1{
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            height: 30px;
-            width: 120px;
-            border: 1px solid white;
-            color: white;
-            border-radius: 4px;
-        }
-        /*footer-4*/
-
-        .footer4{
-            width: 100%;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #10111cfb;
-            color: rgb(232, 228, 228);
-            flex-direction: column;
-        }
-        .data-A{
-            width: 70%;
-            height: 100%;
-            display: grid;
-            align-items: flex-start;
-            justify-content: center;
-            grid-template-columns: repeat(7,1fr);
-            flex-direction: column;
-            font-size: 0.8rem;
-            text-transform: capitalize;
-            font-family: Arial, Helvetica, sans-serif;
-            /* gap: 10px; */
-            margin-top: 5%;
-        }
-        .AB{
-            width: 90px;
-            height: 60%;
-            font-size: .7rem;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            flex-direction: column;
-            gap: 5px;
-        }
-        h4{
-            font-size: .82rem;
-        }
-        .AB p{
-            font-size: .7rem;
-            font-weight: normal;
-            color: gainsboro;
-        }
-        .data-B{
-            width: 100%;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            flex-direction: column;
-            gap: 5px;
-            font-size: 0.82rem;
-            margin-bottom: 8px;
-            
-        }
-        .B1{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-       
-       
-    </style>
+<link rel="stylesheet" href="amazon1.css">
 </head>
 <body>
     
-     
+
+<div class="darken">
 
     <!-- <header> -->
 
-        <div class="nav_bar">
-            <div class="nav_logo border">
-                <div class="logo">
-                </div>
-            </div>
+        <div class="notch"></div>
 
+        <!-- first nav bar -->
+
+        <div class="nav_bar">
+
+            <div class="nav_logo">
+                <div class="logo" id="logo" onclick="toggleMode()"></div>
+                <div class="logo2" onclick="toggleMode()"></div>
+                    
+            </div>
+           
             <div class="nav_address border">
                 <p class="add_first">Deliverd to</p>
                 <div class="add_icon">
@@ -731,10 +47,10 @@
             </div>
 
             <div class="nav_location">
-              <img src="india logo.jpg" alt="">
+              <img src="./images/india logo.jpg" alt="">
               <select class="location_select">
                 <option value="">IND</option>
-            </select>
+              </select>
             </div>
 
             <div class="nav_signin border">
@@ -743,6 +59,177 @@
                 <p class="nav_second">Account & Lists</p>
                 </div>
                 <select class="location_select"></select>
+            </div>
+
+
+            <div class="slider_container fix">
+                <p>
+                    <i class="fa-solid fa-xmark" id="slider_logo"></i>
+                </p>
+            </div>
+            <div class="slider fix">
+                      
+              <div class="slide_bar border">
+              <img src="./images/humenlogo.jpg" alt="">
+              <h2>Hello,sign in</h2>
+              </div>
+            
+              <div class="slide_bar_data1">
+              <h2>Digital content & devices</h2>
+              <div class="A">
+                  <p>Amazon music </p>
+                  <i class="fa-solid fa-angle-right"></i>
+              </div>
+              <div class="B">
+                  <p>kindle E-readers & books </p>
+                  <i class="fa-solid fa-angle-right"></i>
+              </div>
+             <div class="C">
+                  <p>Amazon appstore </p>
+                  <i class="fa-solid fa-angle-right"></i>
+             </div>
+              </div>
+            
+               <div class="line1"></div>
+            
+               <div class="slide_bar_data2">
+              <h2>shop by department</h2>
+              <div class="A">
+                     <p>Electronics</p>
+                     <i class="fa-solid fa-angle-right"></i>
+              </div>
+            
+            <div class="A">
+                 <p>smart home </p>
+                 <i class="fa-solid fa-angle-right"></i>
+            </div>
+            
+            <div class="A">
+              <p>arts & crafts</p>
+               <i class="fa-solid fa-angle-right"></i>
+            </div>
+            
+                 <p>see all
+                 <i class="fa-solid fa-angle-down"></i>
+                 </p>
+            
+               </div>
+            
+               <div class="line2"></div>
+            
+               <div class="slide_bar_data2">
+              <h2>program & features</h2>
+              <div class="A">
+                     <p>gift card</p>
+                     <i class="fa-solid fa-angle-right"></i>
+              </div>
+              <p>shop by interest </p>
+            
+            <div class="A">
+              <p>amazon live</p>
+               <i class="fa-solid fa-angle-right"></i>
+            </div>
+            
+            <div class="A">
+              <p>international shopping </p>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+            
+                 <p>see all
+                 <i class="fa-solid fa-angle-down"></i>
+                 </p>
+            
+               </div>
+            
+               <div class="line2"></div>
+            
+               <div class="slide_bar_data3">
+            <h2>help & settings</h2>
+            <p>your account</p>
+            
+            <div class="AB">
+              <i class="fa-solid fa-globe"></i>
+              <p>English</p>
+            </div>
+            
+            <div class="AB">
+              <img src="./images/india logo.jpg" alt="" height="20px" width="20px">
+              <p>INDIA</p>
+            </div>
+            <p>customer services</p>
+            <p>sign in</p>
+               </div>
+            </div>
+
+            <div class="sign_pop_container">
+                <button class="sign_pop_btn">Sign in</button>
+                <p>New use ? <a>Click here</a></p>
+              </div>
+
+            <!--  login slider bar  -->
+
+            <div class="containerA">
+                <div class="cont_img">
+                    <img src="./images/Amazon-India-Logo-PNG-HD.png" alt="img" id="slide_img">
+
+                    <i class="fa-solid fa-xmark" id="cont_img_icon"></i>
+                </div>
+               
+
+              <form onsubmit="return validateForm()" class="form" id="form">
+                <div class="form-control">
+                  <p id="sign_pera">Sign in</p>
+                  <br>
+                  <br>
+                  <label for="text">Email or mobile number</label>
+                  <input type="text" name="" id="email" placeholder="enter your email here..." onkeyup="white(this.value)" required>
+                  <span
+                    id="email-error"
+                    class="error-message"
+                ></span>
+                <p id="alert"></p>
+                
+                  <br>
+                  <button class="sign_button1" type="submit" value="Submit">Submit</button>
+                  <br>
+                  <br>
+                  <p id="pera2">By continuing, you agree to amazon's <a>Condition of Use</a> and <a>Privacy Notice</a></p>
+                  <br>
+                  <a>Need Help ?</a>
+                  <br>
+                  
+                  <div class="line"></div>
+                  <br>
+                  <h3>Buying for work ?</h3>
+                  <br>
+                  <a>Shop on amazon Business</a>
+                  <br>
+                </div>
+            
+                <div class="line_bar">
+                  <div class="line2"></div>
+                  <p>New to Amazon ?</p>
+                  <div class="line3"></div>
+                </div>
+            
+                <button class="button2">
+                  Create your Amazon account
+                </button>
+                  
+                <footer class="Footer">
+              
+                  <div class="Footer1">
+                    <p>conditions of Use</p>
+                    <p>Privacy Notice</p>
+                    <p>Help</p>
+                  </div>
+                  <div class="Footer2">
+                    <p>© 1996-2024,
+                    <p>Amazon.com, Inc. or its affiliates</p>
+                  </div>
+              
+                </footer>
+            </form>
             </div>
 
             <div class="nav_return border">
@@ -756,110 +243,18 @@
             </div>
         </div>
 
+        <!-- panel nav bar -->
+
         <div class="panel ">
 
             <div class="panel_all border">
                
-                <a href="slider box">
+                <div class="slider_box" id="slide_pera">
                     <i class="fa-solid fa-bars"></i>
                     ALL
-                    <div class="slider ">
-            
-                        <div class="slide_bar border">
-                        <img src="humenlogo.jpg" alt="">
-                        <h2>Hello,sign in</h2>
-                        </div>
-            
-                        <div class="slide_bar_data1">
-                        <h2>Digital content & devices</h2>
-                        <div class="A">
-                            <p>Amazon music </p>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </div>
-                        <div class="B">
-                            <p>kindle E-readers & books </p>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </div>
-                       <div class="C">
-                            <p>Amazon appstore </p>
-                            <i class="fa-solid fa-angle-right"></i>
-                       </div>
-                        </div>
-            
-                         <div class="line1"></div>
-            
-                         <div class="slide_bar_data2">
-                        <h2>shop by department</h2>
-                        <div class="A">
-                               <p>Electronics</p>
-                               <i class="fa-solid fa-angle-right"></i>
-                        </div>
-            
-                    <div class="A">
-                           <p>smart home </p>
-                           <i class="fa-solid fa-angle-right"></i>
-                    </div>
-            
-                    <div class="A">
-                        <p>arts & crafts</p>
-                         <i class="fa-solid fa-angle-right"></i>
-                    </div>
-            
-                           <p>see all
-                           <i class="fa-solid fa-angle-down"></i>
-                           </p>
-            
-                         </div>
-            
-                         <div class="line2"></div>
-            
-                         <div class="slide_bar_data2">
-                        <h2>program & features</h2>
-                        <div class="A">
-                               <p>gift card</p>
-                               <i class="fa-solid fa-angle-right"></i>
-                        </div>
-                        <p>shop by interest </p>
-            
-                    <div class="A">
-                        <p>amazon live</p>
-                         <i class="fa-solid fa-angle-right"></i>
-                    </div>
-            
-                    <div class="A">
-                        <p>international shopping </p>
-                        <i class="fa-solid fa-angle-right"></i>
-                 </div>
-            
-                           <p>see all
-                           <i class="fa-solid fa-angle-down"></i>
-                           </p>
-                
-                         </div>
-            
-                         <div class="line2"></div>
-            
-                         <div class="slide_bar_data3">
-                    <h2>help & settings</h2>
-                    <p>your account</p>
-            
-                    <div class="AB">
-                        <i class="fa-solid fa-globe"></i>
-                        <p>English</p>
-                    </div>
-            
-                    <div class="AB">
-                        <img src="india logo.jpg" alt="" height="20px" width="20px">
-                        <p>INDIA</p>
-                    </div>
-                    <p>customer services</p>
-                    <p>sign in</p>
-                         </div>
-                    </div>
-                </a>
-
+                </div>
             </div>
-
+            
             <div class="panel_ops">
                 <p>Today's Deals</p>
                 <p>Customer Services</p>
@@ -867,20 +262,235 @@
                 <p>Gift Card</p>
                 <p>Sell</p>
             </div>
-
+            
             <div class="panel_deals border">
                 Shop Deal In Electronics
             </div>
-
+            
         </div>
 
-    <!-- hero section -->
+        <!-- hover sign slider -->
+        <div class="hover_container">
+            <div class="hover_sign">
+              <button class="hover_btn">Sign in</button>
+              <p>New customer ? <a>Start here.</a></p>
+            </div>
+            <div class="hover_line"></div>
+        
+            <div class="hover_about">
+              <div class="hover_list">
+                <h3>Your Lists</h3>
+                <p>create a wish list</p>
+                <p>wish from any website</p>
+                <p>baby wishlist</p>
+                <p>discover your style</p>
+                <p>explore showroom</p>
+              </div>
+        
+              <!-- <div class="hover_line2"></div> -->
+        
+              <div class="hover_account">
+                <h3>Your Account</h3>
+                <p>your account</p>
+                <p>your Orders</p>
+                <p>your wish list</p>
+                <p>your recommendetions</p>
+                <p>your prime membership</p>
+                <p>your prime video</p>
+                <p>your subscribe & save items</p>
+                <p>memberships & subscriptions</p>
+                <p>your seller account</p>
+                <p>manage your content and device</p>
+                <p>create your free business account</p>
+              </div>
+              </div>
+    </div>
+        
+        <!-- <div class="slider_container"> -->
+            <div class="slider">
 
-    <div class="hero_section">
+                <div class="slide_bar border">
+                <img src="./images/humenlogo.jpg" alt="">
+                <h2>Hello,sign in</h2>
+                </div>
+    
+                <div class="slide_bar_data1">
+                <h2 class="heading">Digital content & devices</h2>
+                <div class="A">
+                    <p>Amazon music </p>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div class="B">
+                    <p>kindle E-readers & books </p>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+               <div class="C">
+                    <p>Amazon appstore </p>
+                    <i class="fa-solid fa-angle-right"></i>
+               </div>
+                </div>
+    
+                 <div class="line1"></div>
+    
+                 <div class="slide_bar_data2">
+                <h2>shop by department</h2>
+                <div class="A">
+                       <p>Electronics</p>
+                       <i class="fa-solid fa-angle-right"></i>
+                </div>
+    
+            <div class="A">
+                   <p>smart home </p>
+                   <i class="fa-solid fa-angle-right"></i>
+            </div>
+    
+            <div class="A">
+                <p>arts & crafts</p>
+                 <i class="fa-solid fa-angle-right"></i>
+            </div>
+    
+                   <p>see all
+                   <i class="fa-solid fa-angle-down"></i>
+                   </p>
+    
+                 </div>
+    
+                 <div class="line2"></div>
+    
+                 <div class="slide_bar_data2">
+                <h2>program & features</h2>
+                <div class="A">
+                       <p>gift card</p>
+                       <i class="fa-solid fa-angle-right"></i>
+                </div>
+                <p>shop by interest </p>
+    
+            <div class="A">
+                <p>amazon live</p>
+                 <i class="fa-solid fa-angle-right"></i>
+            </div>
+    
+            <div class="A">
+                <p>international shopping </p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+    
+                   <p>see all
+                   <i class="fa-solid fa-angle-down"></i>
+                   </p>
+        
+                 </div>
+    
+                    <div class="line2"></div>
+    
+                        <div class="slide_bar_data3">
+                             <h2>help & settings</h2>
+                             <p>your account</p>
+                               <p>customer services</p>
+                               <p>sign in</p>
+                        </div>
+                    </div>
+
+                    <div class="minimize">
+                        <div class="slide_bar_data1">
+                            <h2>Digital content & devices</h2>
+                            <div class="A">
+                                <p>Amazon music </p>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                            <div class="B">
+                                <p>kindle E-readers & books </p>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                           <div class="C">
+                                <p>Amazon appstore </p>
+                                <i class="fa-solid fa-angle-right"></i>
+                           </div>
+                            </div>
+                    
+                             <div class="line1"></div>
+                    
+                             <div class="slide_bar_data2">
+                            <h2>shop by department</h2>
+                            <div class="A">
+                                   <p>Electronics</p>
+                                   <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                    
+                        <div class="A">
+                               <p>smart home </p>
+                               <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    
+                        <div class="A">
+                            <p>arts & crafts</p>
+                             <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    
+                               <p>see all
+                               <i class="fa-solid fa-angle-down"></i>
+                               </p>
+                    
+                             </div>
+                    
+                             <div class="line2"></div>
+                    
+                             <div class="slide_bar_data2">
+                            <h2>program & features</h2>
+                            <div class="A">
+                                   <p>gift card</p>
+                                   <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                            <p>shop by interest </p>
+                    
+                        <div class="A">
+                            <p>amazon live</p>
+                             <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    
+                        <div class="A">
+                            <p>international shopping </p>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    
+                               <p>see all
+                               <i class="fa-solid fa-angle-down"></i>
+                               </p>
+                    
+                             </div>
+                    
+                            <div class="line2"></div>
+                    
+                            <div class="slide_bar_data3">
+                                         <h2>help & settings</h2>
+                                         <p>your account</p>
+                    
+                                           <p>customer services</p>
+                                           <p>sign in</p>
+                            </div>
+                    </div>
+
+     <!-- hero section -->
+
+     <div class="hero_section">
+        <div class="slideshow_container">
+            <div class="mySlides">
+              <img src="./images/amazon bg2.jpg" alt="Slide 1">
+            </div>
+            <div class="mySlides">
+              <img src="./images/amazon bg3.jpg" alt="Slide 2">
+            </div>
+            <div class="mySlides">
+              <img src="./images/amzon bg4.jpg" alt="Slide 3">
+            </div>
+            <div class="mySlides">
+                <img src="./images/bacgd img.jpg" alt="Slide 4">
+            </div>
+        </div>
         <div class="hero_msg">
          <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="https://www.amazon.in">Click here to go to amazon.in</a></p>
         </div>
-     </div>
+      </div>
  
      <!-- Home-indicators -->
  
@@ -897,51 +507,51 @@
 
     <div class="shop_section1">
 
-        <div class="box1 box">
+        <div class="box1 box" id="shop_box">
             <h2>Personal & Health Care</h2>
             <div class="shop_img1">
-                <img src="PCs.jpg" alt="" class="box1_img">
+                <img src="./images/PCs.jpg" alt="" class="box1_img">
             </div>
             <p>see more</p>
         </div>
 
-        <div class="box2 box">
+        <div class="box2 box" id="shop_box">
             <h2>Gaming Accessories</h2>
 
            <div class="shop_img">
             
             <div class="shop_img2">
-                <img src="headset.jpg" alt="">
+                <img src="./images/headset.jpg" alt="">
                 <p>headset</p>
             </div>
             <div class="shop_img2">
-                <img src="chair.jpg" alt="">
+                <img src="./images/chair.jpg" alt="">
                 <p>Chairs</p>
             </div>
             <div class="shop_img2">
-                <img src="keyboard.jpg" alt="">
+                <img src="./images/keyboard.jpg" alt="">
                 <p>Keyboard</p>
             </div>
             <div class="shop_img2">
-                <img src="mouse.jpg" alt="">
+                <img src="./images/mouse.jpg" alt="">
                 <p>Mouse</p>
             </div>
            </div>
             <p>see more</p>
         </div>
 
-        <div class="box3 box">
+        <div class="box3 box" id="shop_box">
             <h2>Refresh Your Space</h2>
             <div class="shop_img3">
-                <img src="headset.jpg" alt="" class="box3_img">
+                <img src="./images/headset.jpg" alt="" class="box3_img">
             </div>
             <p>see more</p>
         </div>
 
-        <div class="box4 box">
+        <div class="box4 box" id="shop_box">
             <h2>Deal in PCs</h2>
             <div class="shop_img4">
-                <img src="PCs.jpg" alt="" class="box4_img">
+                <img src="./images/PCs.jpg" alt="" class="box4_img">
             </div>
             <p>see more</p>
         </div>
@@ -952,51 +562,51 @@
 
     <div class="shop_section2">
         
-      <div class="boxA box">
+      <div class="boxA box" id="shop_box">
           <h2>Personal & Health Care</h2>
           <div class="shop_imgA">
-              <img src="mouse.jpg" alt="" class="box1_img">
+              <img src="./images/mouse.jpg" alt="" class="box1_img">
           </div>
           <p>see more</p>
       </div>
 
-      <div class="boxB box">
+      <div class="boxB box" id="shop_box">
           <h2>Refresh Your Space</h2>
           <div class="shop_imgB">
-              <img src="chair.jpg" alt="" class="box3_img">
+              <img src="./images/chair.jpg" alt="" class="box3_img">
           </div>
           <p>see more</p>
       </div>
 
-      <div class="boxC box">
+      <div class="boxC box" id="shop_box">
         <h2>Gaming Accessories</h2>
 
        <div class="shop_imgC">
 
             <div class="shop_imgC1">
-            <img src="headset.jpg" alt="">
+            <img src="./images/headset.jpg" alt="">
             <p>headset</p>
             </div>
             <div class="shop_imgC1">
-            <img src="chair.jpg" alt="">
+            <img src="./images/chair.jpg" alt="">
             <p>Chairs</p>
             </div>
             <div class="shop_imgC1">
-            <img src="keyboard.jpg" alt="">
+            <img src="./images/keyboard.jpg" alt="">
             <p>Keyboard</p>
             </div>
             <div class="shop_imgC1">
-            <img src="mouse.jpg" alt="">
+            <img src="./images/mouse.jpg" alt="">
             <p>Mouse</p>
             </div>
        </div>
         <p>see more</p>
        </div>
 
-      <div class="boxD box">
+      <div class="boxD box" id="shop_box">
           <h2>Deal in PCs</h2>
           <div class="shop_imgD">
-              <img src="PCs.jpg" alt="" class="box4_img">
+              <img src="./images/PCs.jpg" alt="" class="box4_img">
           </div>
           <p>see more</p>
       </div>
@@ -1005,20 +615,36 @@
 
   <!-- section-3 -->
 
-  <div class="shop_section3 ">
-    <div class="section_txt">
-      <h2>Best Sellers in Sports & Outdoors</h2>
-      <p><span>see more</span></p>
-    </div>
-    <div class="section3_img">
-      <div><i class="fa-solid fa-angle-left"></i></div>
-           <img src="mouse.jpg" alt="">
-           <img src="keyboard.jpg" alt="">
-           <img src="mouse.jpg" alt="">
-           <img src="chair.jpg" alt="">
-           <img src="headset.jpg" alt="">
-      <div><i class="fa-solid fa-angle-right"></i></div>
-    </div>
+  <div class="shop_section3 " id="shop_box">
+          <div class="section_txt">
+              <h2>Best Sellers in Sports & Outdoors</h2>
+              <p><span>see more</span></p>
+           </div>
+      <div class="section3_img">
+
+        <div class="slider-wrapper">
+            <button id="prev-slide" class="slide-button material-symbols-rounded">
+              chevron_left
+            </button>
+            <ul class="image-list">
+              <img class="image-item" src="./images/img-1.jpg" alt="img-1" />
+              <img class="image-item" src="./images/img-2.jpg" alt="img-2" />
+              <img class="image-item" src="./images/img-3.jpg" alt="img-3" />
+              <img class="image-item" src="./images/img-4.jpg" alt="img-4" />
+              <img class="image-item" src="./images/img-5.jpg" alt="img-5" />
+              <img class="image-item" src="./images/img-6.jpg" alt="img-6" />
+              <img class="image-item" src="./images/img-7.jpg" alt="img-7" />
+              <img class="image-item" src="./images/img-8.jpg" alt="img-8" />
+              <img class="image-item" src="./images/img-9.jpg" alt="img-9" />
+              <img class="image-item" src="./images/img-10.jpg" alt="img-10" />
+              
+            </ul>
+            <button id="next-slide" class="slide-button material-symbols-rounded">
+              chevron_right
+            </button>
+          </div>
+         
+       </div>
   </div>
 
        <!-- footer section -->
@@ -1027,7 +653,7 @@
 
   <div class="footer1 box">
     <h3>see personalized recommendeds</h3>
-    <button>Sign in</button>
+    <button class="footer1_btn"> Sign in</button>
     <p>New Costumer?? <a href="https://www.amazon.com">start here.</a></p>
   </div>
 
@@ -1035,7 +661,7 @@
 
   <div class="footer2 ">
     <i class="fa-solid fa-house"></i>
-    <p>Back to Home</p>
+    <p id="footer_pera">Back to Home</p>
   </div>
 
   <!-- footer-3 -->
@@ -1089,7 +715,7 @@
     <div class="line"></div>
 
     <div class="details">
-        <img src="amzon logo (1).jpg" alt="" class="details_img">
+        <img src="./images/Amazon-India-Logo-PNG-White-removebg-preview.png" alt="" class="details_img">
          
         <div class="details1">
             <i class="fa-solid fa-globe"></i>
@@ -1103,7 +729,7 @@
         </div>
 
         <div class="details1">
-            <img src="india logo.jpg" alt="indianlogo" height="20px" width="20px">
+            <img src="./images/india logo.jpg" alt="indianlogo" height="20px" width="20px">
             <p>INDIA</p>
         </div>
 
@@ -1235,5 +861,8 @@
     </div>
   </div>
 
+</div>
+
+  <script src="amazon1.js"></script>
 </body>
 </html>
